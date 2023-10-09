@@ -37,6 +37,7 @@ function YouTubeFormOld() {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.name}
+            // {...formik.getFieldProps('name')}
           />
           {formik.touched.name && formik.errors.name ? (
             <div className="error">{formik.errors.name}</div>
