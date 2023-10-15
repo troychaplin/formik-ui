@@ -1,9 +1,9 @@
 import React from 'react'
 import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
-import FormikControl from '../FormikControl/FormikControl'
+import FormikControl from '../components/FormikControl/FormikControl'
 
-function FormikContainer() {
+function FormExample() {
   const dropdownOptions = [
     { key: 'Select an Option', value: '' },
     { key: 'Option 1', value: 'sOption1' },
@@ -29,7 +29,8 @@ function FormikContainer() {
     description: '',
     selectOption: '',
     radioOption: '',
-    checkboxOption: []
+    checkboxOption: [],
+    birthDate: null
   }
 
   const validationSchema = Yup.object({
@@ -38,7 +39,8 @@ function FormikContainer() {
     description: Yup.string().required('Required'),
     selectOption: Yup.string().required('Required'),
     radioOption: Yup.string().required('Required'),
-    checkboxOption: Yup.array().required('Required')
+    checkboxOption: Yup.array().required('Required'),
+    birthDate: Yup.date().required('Required').nullable()
   })
 
   const onSubmit = values => console.log('Form data', values)
@@ -90,6 +92,11 @@ function FormikContainer() {
             name='checkboxOption'
             options={checkboxOptions}
           />
+          <FormikControl
+            control='date'
+            label='Pick a date'
+            name='birthDate'
+          />
           <button type="submit">Submit</button>
         </Form>
       )}
@@ -97,4 +104,4 @@ function FormikContainer() {
   )
 }
 
-export default FormikContainer
+export default FormExample
