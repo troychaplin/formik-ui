@@ -9,9 +9,17 @@ label {
   margin-bottom: 5px;
 }
 
+input + label {
+  font-weight: bold;
+  display: inline-flex;
+  margin-right: 20px;
+}
+
 input[type="text"],
 input[type="email"],
-textarea {
+input[type="password"],
+textarea,
+select {
   display: block;
   width: 400px;
   padding: 6px 12px;
@@ -22,6 +30,7 @@ textarea {
   background-image: none;
   border: 1px solid #ccc;
   border-radius: 4px;
+  /* margin-bottom: 20px; */
 }
 
 .form-control {
@@ -30,5 +39,4 @@ textarea {
 
 .error {
   color: red;
-  font-weight: 700;
 }
