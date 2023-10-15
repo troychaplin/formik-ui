@@ -18,6 +18,7 @@ function FormikContainer() {
   ]
   
   const initialValues = {
+    name: '',
     email: '',
     description: '',
     selectOption: '',
@@ -25,6 +26,7 @@ function FormikContainer() {
   }
 
   const validationSchema = Yup.object({
+    name: Yup.string().required('Required'),
     email: Yup.string().required('Required').email("Invalid email address"),
     description: Yup.string().required('Required'),
     selectOption: Yup.string().required('Required'),
